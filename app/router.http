@@ -1,0 +1,20 @@
+ @baseUrl = http://127.0.0.1:7001
+###
+GET {{baseUrl}}/test  
+    ?name=domo1
+    &password=domo  
+###
+ 
+### post 创建微信客服
+POST {{baseUrl}}/backend/wechater HTTP/1.1
+content-type: application/json
+
+{
+  "name": "string",
+  "desc": "string",
+  "img": "string",
+  "wechat": "string",
+  "qrcode": "string"
+}
+### ### ### ### ### ### ### 
+

@@ -1,0 +1,51 @@
+<script src="https://cdn.bootcss.com/jquery/3.1.0/jquery.js"></script>
+
+
+<script>
+ $.ajax( {
+        "url" : "http://127.0.0.1:7001/test",
+        "type" : "get",
+        "data" : {"id":1}, 
+        "dataType" : "json",		                  
+		"success" : function(data ) {  
+		            console.log(data)	 
+         },
+         "error":function (xhr,txt){
+				 console.log(xhr+","+txt); 
+		 }
+  });
+  $.ajax( {
+        "url" : "http://127.0.0.1:7001/test",
+        "type" : "delete",
+        "data" : {"id":1}, 
+        "dataType" : "json",		                  
+		"success" : function(data ) {  
+		            console.log(data)	 
+         },
+         "error":function (xhr,txt){
+				 console.log(xhr+","+txt); 
+		 }
+  });
+
+  setTimeout(function(){
+         $.get("./test",{},function(data){
+            console.log(data)	 
+         },"json")
+         .fail(function(xhr,txt){
+            console.log(xhr+","+txt); 
+            }
+         )
+
+  },3000)
+
+  setTimeout(function(){
+        $.post("./test",{},function(data){
+            console.log(data)	 
+         },"json")
+         .fail(function(xhr,txt){
+            console.log(xhr+","+txt); 
+            }
+         )
+    
+  },6000)
+</script>
